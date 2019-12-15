@@ -29,4 +29,9 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
+// Unknown Endpoint
+app.get('*', (req, res) => {
+  res.status(404).send('Unknown Endpoint');
+});
+
 module.exports = app;
