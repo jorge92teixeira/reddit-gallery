@@ -1,5 +1,9 @@
 import { combineReducers } from 'redux';
 
+import list from './list';
+import landingToggle from './landingToggle';
+
 export default combineReducers({
-  blank(state, action) { state = 'hello'; return state; },
+  list,
+  landingToggle,
 });
