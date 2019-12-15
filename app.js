@@ -1,11 +1,15 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const connectDb = require('./config/db');
 
 const app = express();
 
 // Cors
 app.use(cors());
+
+// Connect to database
+connectDb();
 
 // Body Parser
 app.use(express.json({ extended: false }));
