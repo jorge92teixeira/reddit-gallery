@@ -52,3 +52,17 @@ export const getPostsByCategory = (category) => async (dispatch) => {
     console.error(error.message);
   }
 };
+
+// Get Posts by subreddit
+export const getPostsBySubreddit = (subreddit) => async (dispatch) => {
+  try {
+    const response = await fetch(`/api/posts/subreddit/${subreddit}`);
+    const data = await response.json();
+    dispatch({
+      type: GET_POSTS_SUBREDDIT,
+      payload: data,
+    });
+  } catch (error) {
+    console.error(error.message);
+  }
+};

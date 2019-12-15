@@ -1,4 +1,4 @@
-import { GET_POSTS_CATEGORY } from '../actions/types';
+import { GET_POSTS_CATEGORY, GET_POSTS_SUBREDDIT } from '../actions/types';
 
 const initialState = {
   byCategory: [],
@@ -11,6 +11,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         byCategory: [...action.payload],
+      };
+    case GET_POSTS_SUBREDDIT:
+      return {
+        ...state,
+        bySubreddit: [...action.payload],
       };
     default:
       return state;
