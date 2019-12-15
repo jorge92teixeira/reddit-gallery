@@ -25,4 +25,16 @@ router.get('/category/:id', async (req, res) => {
   }
 });
 
+// @route   GET /api/subreddit/:id
+// @desc    Get all posts from one subreddit
+// @access  Public
+router.get('/subreddit/:id', async (req, res) => {
+  try {
+    const posts = await Post.find({ subreddit: req.params.id });
+    return res.send(posts);
+  } catch (error) {
+    return res.status(500).send('Server Error');
+  }
+});
+
 module.exports = router;
