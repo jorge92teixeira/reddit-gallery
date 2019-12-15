@@ -19,13 +19,7 @@ app.use(express.json({ extended: false }));
 fetchAndUpdateRedditData();
 
 // Routes
-app.get('/', (req, res) => {
-  try {
-    return res.send('Hello');
-  } catch (error) {
-    return res.status(500).send('Server Error');
-  }
-});
+app.use('/api/posts', require('./routes/api/posts'));
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
