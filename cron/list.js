@@ -1,4 +1,4 @@
-const subredditList = {
+const list = {
   art: [
     'ImaginaryTechnology',
     'ImaginaryMaps',
@@ -66,4 +66,4 @@ const subredditList = {
   ],
 };
 
-module.exports = { subredditList };
+module.exports = { list };

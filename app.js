@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const connectDb = require('./config/db');
+const { fetchAndUpdateRedditData } = require('./cron/fetchAndUpdateRedditData');
 
 const app = express();
 
@@ -13,6 +14,9 @@ connectDb();
 
 // Body Parser
 app.use(express.json({ extended: false }));
+
+// Cron Job
+fetchAndUpdateRedditData();
 
 // Routes
 app.get('/', (req, res) => {
